@@ -1,5 +1,8 @@
 # Sdpc library on windows system
 
+Authors: Yiqing Liu, Qiming He, Renao Yan, Jiawen Li
+
+*H&G Pathology AI Research Team*
 
 # Installation (based on PyPI installer)
 
@@ -42,7 +45,3 @@ level_dimensions = wsi.level_dimensions
 ```
 img = wsi.read_region((Position_X, Position_Y), patch_level, (size_H, size_W))   # patch_size = (size_H, size_W)
 ```
-
-Authors: Yiqing Liu, Qiming He, Renao Yan, Jiawen Li
-
-*H&G Pathology AI Research Team*
