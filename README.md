@@ -1,6 +1,5 @@
 # Sdpc library on windows system
 
-Authors: Yiqing Liu, Qiming He, Renao Yan, Jiawen Li
 
 *H&G Pathology AI Research Team*
 
