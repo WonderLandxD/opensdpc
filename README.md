@@ -1,4 +1,4 @@
-# Sdpc library on windows/Linux system (Upadating)
+# Sdpc library on windows/Linux system (Updating)
 
 
 *H&G Pathology AI Research Team*
