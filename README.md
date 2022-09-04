@@ -16,31 +16,31 @@
 from sdpc.Sdpc import Sdpc
 ```
 
-- Read WSI 
+- **Read WSI**
 
 ```
 wsi = Sdpc(wsi_path)
 ```
 
-- Get the number of levels of WSI
+- **Get the number of levels of WSI**
 
 ```
 level_count = wsi.level_count
 ```
 
-- By how much are levels downsampled from the original image?
+- **By how much are levels downsampled from the original image?**
 
 ```
 level_downsamples = wsi.level_downsample
 ```
 
-- Get the dimensions of data in each level
+- **Get the dimensions of data in each level**
 
 ```
 level_dimensions = wsi.level_dimensions
 ```
 
-- Get the patch under a certain position at a certain level in WSI
+- **Get the patch under a certain position at a certain level in WSI**
 
 ```
 img = wsi.read_region((Position_X, Position_Y), patch_level, (size_H, size_W))   # patch_size = (size_H, size_W)
