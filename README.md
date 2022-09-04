@@ -1,4 +1,4 @@
-# Sdpc library on windows system
+# Sdpc library on windows/Linux system (Upadating)
 
 
 *H&G Pathology AI Research Team*
@@ -6,6 +6,8 @@
 # Installation (based on PyPI installer)
 
 `pip install sdpc-win`
+
+`pip install sdpc-linux`
 
 # How to use Sdpc library
 
