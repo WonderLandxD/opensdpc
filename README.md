@@ -1,5 +1,4 @@
-# Sdpc library on windows/Linux system (Updating)
-
+# Sdpc library for Python (Updating)
 
 *H&G Pathology AI Research Team*
 
