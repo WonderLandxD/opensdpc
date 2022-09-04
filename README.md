@@ -10,7 +10,7 @@
 
 # How to use Sdpc library
 
-- Import Sdpc Library:
+- **Import Sdpc Library:**
 
 ```
 from sdpc.Sdpc import Sdpc
