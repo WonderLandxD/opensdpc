@@ -7,7 +7,6 @@ import sys
 from sdpc.Sdpc_struct import SqSdpcInfo
 
 
-
 # windows下环境配置，调用.dll文件
 dirname, _ = os.path.split(os.path.abspath(__file__))
 os.chdir(os.path.join(dirname, 'DLL\\dll'))
