@@ -356,7 +356,6 @@ if __name__ == '__main__':
                     with open(sdpl_path, 'w') as f:
                         json.dump(label_dic, f)
 
-
             elif args.build_mode == 2:
                 sdpc_path = os.path.join(data_path + '/' + file)
                 slide = Sdpc(sdpc_path)
