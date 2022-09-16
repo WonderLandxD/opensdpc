@@ -8,6 +8,12 @@
 
 `pip install sdpc-linux`
 
+# Source Code for sdpc-win & sdpc-linux
+
+[sdpc for linux (version 1.5)](https://pypi.org/project/sdpc-linux/#files)
+
+[sdpc for windows (version 3.0)](https://pypi.org/project/sdpc-win/#files)
+
 # How to use Sdpc library
 
 - **Import Sdpc Library:**
