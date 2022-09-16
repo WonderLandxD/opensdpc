@@ -1,6 +1,7 @@
 import ctypes
 from ctypes import *
 
+
 class SqPicHead(Structure):
     _pack_ = 1
     _fields_ = [
