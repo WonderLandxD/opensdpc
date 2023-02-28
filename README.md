@@ -1,12 +1,17 @@
-# Sdpc library for Python
+# About sdpc-for-python
 
-*H&G Pathology AI Research Team*
+Sdpc-for-python is a python library for processing whole slide images (WSIs) in **sdpc** format. To read WSIs in sdpc format in Windows platform, download the [TEKSQRAY reading software](https://www.sqray.com/yprj).
 
-# Installation (based on PyPI installer)
+|  Download link |  Extraction code |
+|  ----  | ----  |
+| [Baidu Cloud](https://pan.baidu.com/s/1A4oOSlS2pCTsSRmQ_eCljQ)  | sq12 |
 
-`pip install sdpc-win`
+# Installation
 
-`pip install sdpc-linux`
+|  Platform   |  PyPI installer |
+|  ----  | ----  |
+| Windows  | `pip install sdpc-win` |
+| Linux  | `pip install sdpc-linux`|
 
 # Source Code for sdpc-win & sdpc-linux
 
@@ -51,3 +56,18 @@ level_dimensions = wsi.level_dimensions
 ```
 img = wsi.read_region((Position_X, Position_Y), patch_level, (size_H, size_W))   # patch_size = (size_H, size_W)
 ```
+
+# Batch patches
+
+Build patches from WSIs in sdpc format in [Build-patch-for-sdpc Library](https://github.com/RenaoYan/Build-Patch-for-Sdpc).
+
+Two approaches (build *w/wo* .sdpl) to build patches are given for two different platforms (Windows/Linux).
+
+
+# Troubleshooting
+
+1. `OSError: libDecodeHevc.so: cannot open shared object file: No such file or directory`
+
+See the issue [#2](https://github.com/WonderLandxD/sdpc-for-python/issues/2).
+
+*H&G Pathology AI Research Team*
