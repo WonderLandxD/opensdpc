@@ -2,9 +2,10 @@
 
 Sdpc-for-python is a python library for processing whole slide images (WSIs) in **sdpc** format. To read WSIs in sdpc format in Windows platform, download the [TEKSQRAY reading software](https://www.sqray.com/yprj).
 
-|  Download link |  Extraction code |
-|  ----  | ----  |
-| [Baidu Cloud](https://pan.baidu.com/s/1A4oOSlS2pCTsSRmQ_eCljQ)  | sq12 |
+|  Download link | Extraction code | Instruction |
+|  ----  | ----  | ----  |
+| [Baidu Cloud](https://pan.baidu.com/s/1A4oOSlS2pCTsSRmQ_eCljQ)  | sq12 | Lite version |
+| [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/4b533c59a2b74e099d08/?dl=1) | - | Full version |
 
 # Installation
 
@@ -59,7 +60,7 @@ img = wsi.read_region((Position_X, Position_Y), patch_level, (size_H, size_W))  
 
 # Batch patches
 
-Build patches from WSIs in sdpc format in [Build-patch-for-sdpc Library](https://github.com/RenaoYan/Build-Patch-for-Sdpc).
+Build patches from WSIs in sdpc format in [Build-patch-for-sdpc repository](https://github.com/RenaoYan/Build-Patch-for-Sdpc).
 
 Two approaches (build *w/wo* .sdpl) to build patches are given for two different platforms (Windows/Linux).
 
