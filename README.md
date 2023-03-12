@@ -25,13 +25,13 @@ Sdpc-for-python is a python library for processing whole slide images (WSIs) in 
 - **Import Sdpc Library:**
 
 ```
-from sdpc.Sdpc import Sdpc
+import sdpc
 ```
 
 - **Read WSI**
 
 ```
-wsi = Sdpc(wsi_path)
+wsi = sdpc.Sdpc(wsi_path)
 ```
 
 - **Get the number of levels of WSI**
