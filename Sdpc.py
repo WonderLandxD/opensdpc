@@ -54,6 +54,13 @@ class Sdpc:
         for i in range(levelCount):
             _list.append(rate ** i)
         return tuple(_list)
+      
+    def get_best_level_for_downsample(self, downsample):
+      
+        preset = [i*i for i in self.level_downsample]
+        err = [abs(i-downsample) for i in preset]
+        level = err.index(min(err))
+        return level
 
     def read_region(self, location, level, size):
 
