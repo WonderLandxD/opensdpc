@@ -58,7 +58,14 @@ level_dimensions = wsi.level_dimensions
 img = wsi.read_region((Position_X, Position_Y), patch_level, (size_H, size_W))   # patch_size = (size_H, size_W)
 ```
 
-# Batch patches
+# How to cut patches with Sdpc Library
+
+1. Single-thread processing (*wo* .sdpl annotation file)
+``` shell
+python sdpc_cut_patches.py --wsi_path '' --save_path '' --tile_size '' --thumbnail_level '' --patch_level '' --overlap_size ''
+```
+
+2. Multi-thread processing
 
 Build patches from WSIs in sdpc format in [Build-patch-for-sdpc repository](https://github.com/RenaoYan/Build-Patch-for-Sdpc).
 
