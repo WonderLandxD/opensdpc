@@ -62,8 +62,8 @@ if __name__ == '__main__':
 
         marked_img = thumbnail.copy()
 
-        tile_x = int(tile_size / pow(4, thumbnail_level - patch_level))   # 在patch_level=1的情况下切1000*1000 （20x）  thumbnail 是 patch_level = 2的时候做的
-        tile_y = int(tile_size / pow(4, thumbnail_level - patch_level))  # 用于在缩率图中寻找相关位置
+        tile_x = int(tile_size / pow(4, thumbnail_level - patch_level))   
+        tile_y = int(tile_size / pow(4, thumbnail_level - patch_level))  
 
         x_overlap = int(overlap_size / pow(4, thumbnail_level - patch_level))
         y_overlap = int(overlap_size / pow(4, thumbnail_level - patch_level))
@@ -88,12 +88,12 @@ if __name__ == '__main__':
                     if np.sum(mask == 0) / mask.size < blank_TH:
                         cv2.rectangle(marked_img, (end_x, end_y), (start_x, start_y), (255, 0, 0), 2)
                         
-                        cut_x = int(start_x * pow(4, thumbnail_level))
-                        cut_y = int(start_y * pow(4, thumbnail_level))
+                        cut_x = int(start_x * pow(4, thumbnail_level)) # Coordinate X of layer 0
+                        cut_y = int(start_y * pow(4, thumbnail_level)) # Coordinate Y of layer 0
 
                         img = wsi.read_region((cut_x, cut_y) , patch_level, (tile_size, tile_size))     
 
-                        save_img = f'{save_path}/{wsi_name}/patch_level-{str(patch_level)}_X-{cut_x}_Y-{cut_y}.png'   # 第0层的坐标X，Y
+                        save_img = f'{save_path}/{wsi_name}/patch_level-{str(patch_level)}_X-{cut_x}_Y-{cut_y}.png'   
 
                         cv2.imwrite(save_img, img)
                     
