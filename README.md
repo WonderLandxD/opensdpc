@@ -88,11 +88,17 @@ ration = wsi.sampling_rate()
 wsi.crop_patches(tile_size, overlap_size, patch_level, save_dir, blank_TH=0.7, is_mark=True, is_mask=True, patch_norm=False)
 ```
 *tile_size*: patch size
+
 *overlap_size*: overlapped size: recommend: 0
+
 *save_dir*: path to save
+
 *blank_TH*: crop patches with blank rate lower than blank_TH, recommend: 0.7, default=0.7
-*is_mark*： whether the marked thumbnail is needed, default=True
-*is_mask*： whether the mask of the marked thumbnail is needed, default=True
+
+*is_mark*: whether the marked thumbnail is needed, default=True
+
+*is_mask*: whether the mask of the marked thumbnail is needed, default=True
+
 *patch_norm*: whether the normalized color of patches is needed, default=False. (select this will reduce time greatly)
 
 # Other method to cut patches with Sdpc Library
