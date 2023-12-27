@@ -101,6 +101,18 @@ wsi.crop_patches(tile_size, overlap_size, patch_level, save_dir, blank_TH=0.7, i
 
 *patch_norm*: whether the normalized color of patches is needed, default=False. (select this will reduce time greatly)
 
+# Demo code of using Sdpc and OpenSlide library to crop the patches
+
+Using Sdpc library to crop patches.
+```
+python sdpc_crop_patches.py
+```
+
+Using OpenSlide library to crop patches.
+```
+python openslide_crop_patches.py
+```
+
 # Other method to cut patches with Sdpc Library
 
 - Multi-thread processing
