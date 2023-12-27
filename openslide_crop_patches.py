@@ -51,7 +51,7 @@ parser.add_argument('--marked_thumbnail', type=bool, default=True, choices=[Fals
 parser.add_argument('--mask', type=bool, default=True, choices=[False, True],
                     help='0: no produce, 1: produce mask')
 parser.add_argument('--kernel_size', type=int, default=5, help='the kernel size of close and open opts for mask')
-parser.add_argument('--blank_TH', type=float, default=0.2, help='cut patches with blank rate lower than blank_TH')
+parser.add_argument('--blank_TH', type=float, default=0.7, help='cut patches with blank rate lower than blank_TH')
 
 
 ####################################################################################################
