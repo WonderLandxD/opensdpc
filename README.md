@@ -128,4 +128,8 @@ Two approaches (build *w/wo* .sdpl) to build patches are given for two different
 
 See the issue [#2](https://github.com/WonderLandxD/sdpc-for-python/issues/2).
 
+2. `OSError: version 'GLIBC_2.33' not found`
+
+See the issue [#12](https://github.com/WonderLandxD/sdpc-for-python/issues/12).
+
 *Jiawen Li, H&G Pathology AI Research Team*
