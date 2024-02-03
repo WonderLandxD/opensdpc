@@ -1,3 +1,6 @@
+# [Updating News (2024.02.03)]
+1. Updated Part "Troubleshooting"
+
 # [Updating News (2023.12.26)]
 1. **sdpc-linux** and **sdpc-win** are no longer be updated. The latest library **sdpc-for-python** is a new version for Sdpc Python library, which can be used in both Windows and Linux Systems.
 2. The color correction has been updated. Now the color of the cropped patches are consistent with the color in the reading software.
