@@ -40,7 +40,8 @@ so.SqGetRoiRgbOfSpecifyLayer.argtypes = [POINTER(SqSdpcInfo), POINTER(POINTER(c_
                                              c_int, c_int, c_uint, c_uint, c_int]
 so.SqGetRoiRgbOfSpecifyLayer.restype = c_int
 so.SqOpenSdpc.restype = POINTER(SqSdpcInfo)
-
+so.GetLabelJpeg.argtypes = [POINTER(SqSdpcInfo), POINTER(c_uint), POINTER(c_uint), POINTER(c_size_t)]
+so.GetLabelJpeg.restype = POINTER(c_uint8)
 
 class Sdpc:
     def __init__(self, sdpcPath):
@@ -51,6 +52,16 @@ class Sdpc:
         self.level_dimensions = self.getLevelDimensions()
         self.scan_magnification = self.readSdpc(self.sdpcPath).contents.picHead.contents.rate
         self.sampling_rate = self.readSdpc(self.sdpcPath).contents.picHead.contents.scale
+        
+    def saveLabelImg(self, save_path):
+        wPos = POINTER(c_uint)(c_uint(0))
+        hPos = POINTER(c_uint)(c_uint(0))
+        sizePos = POINTER(c_size_t)(c_size_t(0))
+        rgb_pos = so.GetLabelJpeg(self.sdpc, wPos, hPos, sizePos)
+        with open(save_path, 'bw') as f:
+            buf = bytearray(rgb_pos[:sizePos.contents.value])
+            f.write(buf)
+        f.close()
 
     def getRgb(self, rgbPos, width, height):
         intValue = npCtypes.as_array(rgbPos, (height, width, 3))
