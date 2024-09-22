@@ -134,7 +134,7 @@ python openslide_crop_patches.py
 cd multiprocess
 python generate_patches.py --format sdpc  # please see the line 74-83 to custom your own setting
 ```
-Here, I give an example (see `create_wsi_list.ipynb`) for create csv file and load to start cropping patches
+Here, I give an example (see [create_wsi_list.py](https://github.com/WonderLandxD/sdpc-for-python/blob/main/multiprocess/create_wsi_list.py)) for create csv file and load to start cropping patches.
 
 ## Other method to cut patches with Sdpc Library
 
