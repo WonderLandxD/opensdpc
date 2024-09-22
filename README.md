@@ -8,7 +8,7 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 - Step1: Click the [Tsinghua cloud link](https://cloud.tsinghua.edu.cn/f/d1da5598c9c849d98e3f/?dl=1) to download LINUX.zip directly;
 - Step2: Replace the unzipped LINUX folder with the LINUX folder of the sdpc package in your own environment;
 - Step3: Write the absolute path of the LINUX folder and the ffmpeg folder inside it into the environment variable, see the issue [#2](https://github.com/WonderLandxD/sdpc-for-python/issues/2) for more details
-- Step4: Just enter `import sdpc` in python to use it 
+- Step4: Just enter `import sdpc` in python to use it. 
 
 ### [Updating News (2024.02.03)]
 1. Updated Part "Troubleshooting"
