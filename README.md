@@ -1,5 +1,6 @@
-# [Updating News (2024.09.22)]
+## [Updating News (2024.09.22)]
 1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can use older versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896).
+2. Due to copyright restrictions, I cannot directly provide the software for converting sdpc to svs. I am actively communicating with the company and providing an open source interface. Please contact the instrument after-sales staff to request it. See [sqray.com](https://www.sqray.com/service/scanFilm) for more details.
 
 [Note] please use **version==1.5** if you want to use sdpc-linux. I may be slow to reply, thank you for the patience 😊.
 
@@ -9,10 +10,10 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 - Step3: Write the absolute path of the LINUX folder and the ffmpeg folder inside it into the environment variable, see the issue [#2](https://github.com/WonderLandxD/sdpc-for-python/issues/2) for more details
 - Step4: Just enter `import sdpc` in python to use it 
 
-# [Updating News (2024.02.03)]
+### [Updating News (2024.02.03)]
 1. Updated Part "Troubleshooting"
 
-# [Updating News (2023.12.26)]
+### [Updating News (2023.12.26)]
 1. **sdpc-linux** and **sdpc-win** are no longer be updated. The latest library **sdpc-for-python** is a new version for Sdpc Python library, which can be used in both Windows and Linux Systems.
 2. The color correction has been updated. Now the color of the cropped patches are consistent with the color in the reading software.
 3. Changed function name `level_downsample` to `level_downsamples`.
@@ -23,23 +24,23 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 8. The `wsi.crop_patches()` function has been added. Now you can call the function directly in the code to separate the foreground tissue area and crop the patches (Using Pillow Library to save patches).
 9. Added a option that can normalize images in `wsi.crop_patches()` function, it normalizes by H and E channels.
     
-# About sdpc-for-python
+## About sdpc-for-python
 
 Sdpc-for-python is a python library for processing whole slide images (WSIs) in **sdpc** format. To read WSIs in sdpc format in Windows platform, download the [TEKSQRAY reading software](https://www.sqray.com/Download).
 
 |  Download link | Extraction code | Instruction |
 |  ----  | ----  | ----  |
 | [Baidu Cloud](https://pan.baidu.com/s/1A4oOSlS2pCTsSRmQ_eCljQ)  | sq12 | Lite version |
-| [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/4b533c59a2b74e099d08/?dl=1) | - | Full version |
+| Please see the [sqray.com](https://www.sqray.com/Download) | - | Full version |
 
-# Installation
+## Installation
 
 |  Platform   |  PyPI installer |
 |  ----  | ----  |
 | Windows/Linux  | `pip install sdpc-for-python` |
 
 
-# How to use Sdpc library
+## How to use Sdpc library
 
 - **Import Sdpc Library:**
 
@@ -115,7 +116,7 @@ wsi.crop_patches(tile_size, overlap_size, patch_level, save_dir, blank_TH=0.7, i
 
 *patch_norm*: whether the normalized color of patches is needed, default=False. (select this will reduce time greatly)
 
-# Demo code of using Sdpc and OpenSlide library to crop the patches
+## Demo code of using Sdpc and OpenSlide library to crop the patches
 
 Using Sdpc library to crop patches.
 ```
@@ -127,7 +128,7 @@ Using OpenSlide library to crop patches.
 python openslide_crop_patches.py
 ```
 
-# Other method to cut patches with Sdpc Library
+## Other method to cut patches with Sdpc Library
 
 - Multi-thread processing
 
@@ -136,7 +137,7 @@ Build patches from WSIs in sdpc format in [Build-patch-for-sdpc repository](http
 Two approaches (build *w/wo* .sdpl) to build patches are given for two different platforms (Windows/Linux).
 
 
-# Troubleshooting
+## Troubleshooting
 
 1. `OSError: libDecodeHevc.so: cannot open shared object file: No such file or directory`
 
