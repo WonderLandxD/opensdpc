@@ -17,7 +17,7 @@
     
 # About sdpc-for-python
 
-Sdpc-for-python is a python library for processing whole slide images (WSIs) in **sdpc** format. To read WSIs in sdpc format in Windows platform, download the [TEKSQRAY reading software](https://www.sqray.com/yprj).
+Sdpc-for-python is a python library for processing whole slide images (WSIs) in **sdpc** format. To read WSIs in sdpc format in Windows platform, download the [TEKSQRAY reading software](https://www.sqray.com/Download).
 
 |  Download link | Extraction code | Instruction |
 |  ----  | ----  | ----  |
