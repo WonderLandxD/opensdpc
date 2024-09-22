@@ -1,6 +1,7 @@
 ## [Updating News (2024.09.22)]
-1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can use older versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896).
-2. Due to copyright restrictions, I cannot directly provide the software for converting sdpc to svs. I am actively communicating with the company and providing an open source interface. Please contact the instrument after-sales staff to request it. See [sqray.com](https://www.sqray.com/service/scanFilm) for more details.
+1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can still use old versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896).
+2. Due to copyright restrictions, I cannot directly provide the software for converting sdpc to svs. I am actively communicating with the company and providing an open source interface. Please contact the slide-scanner after-sales staff to request it. See [sqray.com](https://www.sqray.com/service/scanFilm) for more details.
+3. Provide an example for generating patches with multiple thread in order to provide pre-processing for huge datasets. See [this subsection](https://github.com/WonderLandxD/sdpc-for-python/edit/main/README.md#demo-code-of-using-sdpc-and-openslide-library-to-crop-the-patches).
 
 [Note] please use **version==1.5** if you want to use sdpc-linux. I may be slow to reply, thank you for the patience 😊.
 
@@ -118,15 +119,22 @@ wsi.crop_patches(tile_size, overlap_size, patch_level, save_dir, blank_TH=0.7, i
 
 ## Demo code of using Sdpc and OpenSlide library to crop the patches
 
-Using Sdpc library to crop patches.
+- Using **single thread** Sdpc library to crop patches.
 ```
 python sdpc_crop_patches.py
 ```
 
-Using OpenSlide library to crop patches.
+- Using **single thread** OpenSlide library to crop patches.
 ```
 python openslide_crop_patches.py
 ```
+
+- Using **multiple thread** to crop patches (***Recommend*** if the WSI number is large).
+```
+cd multiprocess
+python generate_patches.py --format sdpc  # please see the line 74-83 to custom your own setting
+```
+Here, I give an example (see `create_wsi_list.ipynb`) for create csv file and load to start cropping patches
 
 ## Other method to cut patches with Sdpc Library
 
