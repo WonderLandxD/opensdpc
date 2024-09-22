@@ -79,7 +79,7 @@ if __name__ == '__main__':
         reader = csv.reader(file)
         for row in tqdm(reader):
             slide_list.append(row[0])
-    args.save_dir = '/home/ljw/net_data/cervical_fp'
+    args.save_dir = '' # your own save dir
     '''NOTE: dataset settings, custom design'''
 
     pair_list = []
