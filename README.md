@@ -1,3 +1,6 @@
+# [Updating News (2024.09.22)]
+1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can use older versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896)
+
 # [Updating News (2024.02.03)]
 1. Updated Part "Troubleshooting"
 
