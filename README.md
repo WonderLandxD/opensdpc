@@ -1,5 +1,13 @@
 # [Updating News (2024.09.22)]
-1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can use older versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896). Note that please use **version==1.5** if you want to use sdpc-linux.
+1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can use older versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896).
+
+[Note] please use **version==1.5** if you want to use sdpc-linux. I may be slow to reply, thank you for the patience 😊.
+
+If you don't know how to deal with the old version, here is a simple plug-and-play process:
+- Step1: Click the [Tsinghua cloud link](https://cloud.tsinghua.edu.cn/f/d1da5598c9c849d98e3f/?dl=1) to download LINUX.zip directly;
+- Step2: Replace the unzipped LINUX folder with the LINUX folder of the sdpc package in your own environment;
+- Step3: Write the absolute path of the LINUX folder and the ffmpeg folder inside it into the environment variable, see the issue [#2](https://github.com/WonderLandxD/sdpc-for-python/issues/2) for more details
+- Step4: Just enter `import sdpc` in python to use it 
 
 # [Updating News (2024.02.03)]
 1. Updated Part "Troubleshooting"
