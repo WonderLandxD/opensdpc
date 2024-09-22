@@ -1,7 +1,7 @@
 ## [Updating News (2024.09.22)]
 1. Some users' machines are not compatible with the latest compiled packages. For this reason, you can still use old versions. See: [old version for sdpc library](https://github.com/WonderLandxD/sdpc-for-python/tree/4c03a32473eb88f24283446c0967e5053f083896).
 2. Due to copyright restrictions, I cannot directly provide the software for converting sdpc to svs. I am actively communicating with the company and providing an open source interface. Please contact the slide-scanner after-sales staff to request it. See [sqray.com](https://www.sqray.com/service/scanFilm) for more details.
-3. Provide an example for generating patches with multiple thread in order to provide pre-processing for huge datasets. See [this subsection](https://github.com/WonderLandxD/sdpc-for-python/edit/main/README.md#demo-code-of-using-sdpc-and-openslide-library-to-crop-the-patches).
+3. Provide an example for generating patches with multiple thread in order to provide pre-processing for huge datasets. See [this subsection](https://github.com/WonderLandxD/sdpc-for-python/tree/main?tab=readme-ov-file#demo-code-of-using-sdpc-and-openslide-library-to-crop-the-patches).
 
 [Note] please use **version==1.5** if you want to use sdpc-linux. I may be slow to reply, thank you for the patience 😊.
 
