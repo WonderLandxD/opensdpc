@@ -1,5 +1,5 @@
-from opensdpc.OpenSdpc import OpenSdpc
+from opensdpc import OpenSdpc
 
 __all__ = [
-    'Sdpc'
+    'opensdpc'
 ]
