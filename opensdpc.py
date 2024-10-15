@@ -4,6 +4,7 @@ import ctypes
 from ctypes import *
 import gc
 import os
+import io
 import sys
 from Sdpc_struct import SqSdpcInfo
 from PIL import Image
@@ -53,7 +54,7 @@ class OldSdpc:
         self.level_dimensions = self.getLevelDimensions()
         self.scan_magnification = self.readSdpc(self.sdpcPath).contents.picHead.contents.rate
         self.sampling_rate = self.readSdpc(self.sdpcPath).contents.picHead.contents.scale
-        
+
     def saveLabelImg(self, save_path):
         wPos = POINTER(c_uint)(c_uint(0))
         hPos = POINTER(c_uint)(c_uint(0))
@@ -63,6 +64,24 @@ class OldSdpc:
             buf = bytearray(rgb_pos[:sizePos.contents.value])
             f.write(buf)
         f.close()
+
+    def get_label_image(self):
+        """
+        get the label image of the slide, and return as a PIL.Image object
+        """
+        wPos = POINTER(c_uint)(c_uint(0))
+        hPos = POINTER(c_uint)(c_uint(0))
+        sizePos = POINTER(c_size_t)(c_size_t(0))
+
+        # revoke the shared library function GetLabelJpeg to get the label image data
+        rgb_pos = so.GetLabelJpeg(self.sdpc, wPos, hPos, sizePos)
+
+        # convert the returned byte data to bytearray
+        label_data = bytearray(rgb_pos[:sizePos.contents.value])
+
+        label_image = Image.open(io.BytesIO(label_data))
+
+        return label_image
 
     def getRgb(self, rgbPos, width, height):
         intValue = npCtypes.as_array(rgbPos, (height, width, 3))
@@ -287,4 +306,3 @@ def OpenSdpc(wsi_path):
         return OldSdpc(wsi_path)
     else:
         return openslide.OpenSlide(wsi_path)
-    
