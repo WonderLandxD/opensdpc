@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[project]
+name = "opensdpc"
+version = "2.0.0"
+description = "opensdpc: a python library for reading and processing sdpc files"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: MIT",
+]
+dependencies = [
+    'numpy', 'Pillow', 'opencv-python'
+]
+
+[tool.setuptools.packages.find]
+exclude = ["assets*", "benchmark*", "docs", "dist*", "scripts*", "tests*", "checkpoints*"]
+
+[tool.wheel]
+exclude = ["assets*", "benchmark*", "docs", "dist*", "scripts*", "tests*", "checkpoints*"]

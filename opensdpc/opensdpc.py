@@ -5,15 +5,18 @@ from ctypes import *
 import gc
 import os
 import sys
-from Sdpc_struct import SqSdpcInfo
+from opensdpc.Sdpc_struct import SqSdpcInfo
 from PIL import Image
 import numpy as np
-from normalizeStaining import normalizeStaining
+from opensdpc.normalizeStaining import normalizeStaining
 import time
 import openslide
 
 
 if os.name == 'nt':
+    '''
+    TODO: Windows version will be maintained in the future
+    '''
     # Environment configuration under WINDOWS requires calling .dll file
     dirname, _ = os.path.split(os.path.abspath(__file__))
     os.chdir(os.path.join(dirname, 'WINDOWS\\dll'))
@@ -22,7 +25,7 @@ if os.name == 'nt':
 elif os.name == 'posix':
     # Environment configuration under LINUX requires calling .so file
     dirname, _ = os.path.split(os.path.abspath(__file__))
-    so_lacation = os.path.join(dirname, 'LINUX')
+    so_location = os.path.join(dirname, 'LINUX')
     sys.path.append(os.path.join(dirname, 'LINUX'))
     sys.path.append(os.path.join(dirname, 'LINUX/ffmpeg'))
     sys.path.append(os.path.join(dirname, 'LINUX/jpeg'))
@@ -35,7 +38,18 @@ else:
 
 
 # Interface pointer settings
-so = ctypes.CDLL(soPath)
+# print(soPath)
+try:
+    so = ctypes.CDLL(soPath)
+except:
+    raise RuntimeError(f"""Error loading shared library: {soPath}.
+        You may need to add {so_location} to the environment variables to resolve this issue.
+        Instruction:
+        1. Add the following to the last line of your .bashrc file with  '\033[38;5;214mvim ~/.bashrc\033[0m' :
+        '\033[38;5;214mexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:{so_location}:{so_location}/ffmpeg/\033[0m'
+        2. Run '\033[38;5;214msource ~/.bashrc\033[0m' to apply the changes.
+        3. Restart your Python environment or run '\033[38;5;214mimport opensdpc\033[0m' in a new Python session.""")
+    
 so.GetLayerInfo.restype = POINTER(c_char)
 so.SqGetRoiRgbOfSpecifyLayer.argtypes = [POINTER(SqSdpcInfo), POINTER(POINTER(c_uint8)),
                                              c_int, c_int, c_uint, c_uint, c_int]
@@ -69,12 +83,12 @@ class OldSdpc:
         return intValue
 
     def readSdpc(self, fileName):
-        if os.name == 'nt':
-            sdpc = so.SqOpenSdpc(c_char_p(bytes(fileName, 'gbk')))
-            sdpc.contents.fileName = bytes(fileName, 'gbk')
-        else:
-            sdpc = so.SqOpenSdpc(c_char_p(bytes(fileName, 'utf-8')))
-            sdpc.contents.fileName = bytes(fileName, 'utf-8')
+    #     if os.name == 'nt':
+    #         sdpc = so.SqOpenSdpc(c_char_p(bytes(fileName, 'gbk')))
+    #         sdpc.contents.fileName = bytes(fileName, 'gbk')
+    #     else:
+        sdpc = so.SqOpenSdpc(c_char_p(bytes(fileName, 'utf-8')))
+        sdpc.contents.fileName = bytes(fileName, 'utf-8')
         return sdpc
 
     def getLevelCount(self):

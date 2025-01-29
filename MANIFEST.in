@@ -1,0 +1,6 @@
+include opensdpc/LINUX/*.so
+include opensdpc/LINUX/ffmpeg/*
+include opensdpc/LINUX/jpeg/*
+include opensdpc/opensdpc.py
+include opensdpc/normalizeStaining.py
+include opensdpc/Sdpc_struct.py

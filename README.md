@@ -1,6 +1,14 @@
-## 🌟opensdpc: library for histopathology whole slide image processing 
+## 🌟Opensdpc: library for histopathology whole slide image reading and processing 
 
-<img src="cover/pathology_slide_to_wsi_sdpc.png" width="280px" align="right" />
+### [2025.01.29] 🚀 New Update: Local Installation Now Supported!  
+
+🎉 You can now install this library locally using `pip` in editable mode!
+
+💥 Check out the [Installation](#installation) section for more details. 
+
+----------
+
+<img src="cover/pathology_slide_to_wsi_sdpc.png" width="200px" align="right" />
 
 <details>
   <summary>Click to expand/collapse previous news.</summary>
@@ -47,7 +55,7 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 
     
 
-
+---------
 
 ### 🔥 Introduction about opensdpc (extended from openslide)
 
@@ -58,75 +66,33 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 | [Baidu Cloud](https://pan.baidu.com/s/1A4oOSlS2pCTsSRmQ_eCljQ)  | sq12 | Lite version |
 | Please see the [sqray.com](https://www.sqray.com/Download) | - | Full version |
 
+--------
+
 ### 🎈Installation
-There are several versions available. We **recommend** Linux users to use the **opensdpc** version.
+There are several versions available. For Linux users, we now **recommend** using the local installation method. This is a simple way to install the library and you can see the solutions when you encounter some problems such as `OSError: libDecodeHevc.so: cannot open shared object file: No such file or directory`
 
-#### 🌟 opensdpc (recommend for Linux users) 🌟
-
--  [Optional] install openslide library on Linux (same as openslide)
-
-    ```
-    apt install openslide-tools
-    pip install openslide-python
-    ```
-    **If your system has already install the openslide-tools and openslide-python, you can skip this step.**
--  [Optional] install opensdpc-tools
-
-    ```
-    wget --content-disposition https://cloud.tsinghua.edu.cn/f/9077d5abb17a4f10b7d6/?dl=1
-    dpkg -i opensdpc-tools_1.0-1_all.deb
-    ```
-    You can also download this tool from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/9077d5abb17a4f10b7d6/?dl=1). If you want to remove it, `sudo dpkg -P opensdpc-tools`. \
-    **[Note]: the installation of opensdpc-tools requires root permission, so you need to use `sudo -i` to install it. If your system has already install the opensdpc-tools, you can skip this step.**
-
--  install opensdpc library
-
-    ```
-    pip install opensdpc
-    ```
-    After this operation, the opensdpc installation is complete.
-  
-Some users have no sudo permission on their Linux system. In this case, you can git clone this repository first by `git clone https://github.com/WonderLandxD/opensdpc.git`, then refer to the following steps to add the opensdpc environment variable:
-```
-vim ~/.bashrc
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/<repository_path>/LINUX/:/<repository_path>/LINUX/ffmpeg/
-source ~/.bashrc
+First clone the repo and cd into the directory:
+```sh
+git clone https://github.com/WonderLandxD/opensdpc.git
+cd opensdpc
 ```
 
-After this operation, you can also import opensdpc library in your python code.
+Install the openslide library first:
+```sh
+apt install openslide-tools
+pip install openslide-python
+```
 
-<details>
-  <summary>Other libraries</summary>
+Then create a conda env and install the library in editable mode:
+```sh
+conda create -n piano python=3.10
+conda activate piano
+pip install -e .
+```
 
-#### 🌟 sdpc-win (for windows users **only**) 🌟
-- install sdpc-win library
+For Windows users, we will provide a simple way to install the library in the future.
 
-    ```
-    pip install sdpc-win
-    ```
-    After this operation, the sdpc-win installation is complete.
-
-#### 🙁 sdpc-for-python (not recommended, higher ubuntu systems are required) 🙁
-- install sdpc-for-python library
-
-    ```
-    pip install sdpc-for-python
-    ```
-    After this operation, the sdpc-for-python installation is complete.
-
-#### 🙁 sdpc-linux (not recommended, some bug are need to fixed manually) 🙁
-- install sdpc-linux library
-
-    ```
-    pip install sdpc-linux==1.5
-    ```
-    After this operation, the sdpc-linux installation is complete.
-
-</details>
-<!-- |  Platform   |  PyPI installer |
-|  ----  | ----  |
-| Windows/Linux  | `pip install sdpc-for-python` | -->
-
+---------
 
 ### 🚀 Basic usage
 There are two example WSIs in the `data` folder, which are in the **sdpc** format and **svs** format (download from [CLAM](https://github.com/mahmoodlab/CLAM/blob/master/heatmaps/demo/slides/C3L-01663-21.svs)) respectively. 
@@ -164,9 +130,9 @@ The dimensions of each level is ((26880, 21504), (6720, 5376), (1680, 1344), (42
 The thumbnail (level 3) shape is (336, 420, 3).
 ```
 
-### 🚉 Generate the patches
+### 🚉 Generate the patches, create patch features, and so on
 
-We provide a demo file to show how to generate the patches from the WSI. See [generate_demo.ipynb](data/generate_demo.ipynb) for more details. **Note: when using .ipynb file at the first time, you need install the opensdpc library using pip in Jupyter Notebook, jump to [here](data/generate_demo.ipynb) to see how to do it.**
+We provide a new easy-to-use PyTorch library with - **PIANO**: **P**athology **I**mage **AN**alysis m**O**dels to build a complete pipeline for histopathology image AI analysis, including generating patches, creating patch features with novel foundation models, and so on. Check out the [PIANO](https://github.com/WonderLandxD/PIANO) repository for more details.
 
 
 *Jiawen Li, H&G Pathology AI Research Team*
