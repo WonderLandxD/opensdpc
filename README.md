@@ -71,19 +71,19 @@ If you don't know how to deal with the old version, here is a simple plug-and-pl
 ### 🎈Installation
 There are several versions available. For Linux users, we now **recommend** using the local installation method. This is a simple way to install the library and you can see the solutions when you encounter some problems such as `OSError: libDecodeHevc.so: cannot open shared object file: No such file or directory`
 
-First clone the repo and cd into the directory:
+First, clone the repo and cd into the directory:
 ```sh
 git clone https://github.com/WonderLandxD/opensdpc.git
 cd opensdpc
 ```
 
-Install the openslide library first:
+Then, install the openslide library:
 ```sh
 apt install openslide-tools
 pip install openslide-python
 ```
 
-Then create a conda env and install the library in editable mode:
+Finally, create a conda env and install the library in editable mode:
 ```sh
 conda create -n piano python=3.10
 conda activate piano
